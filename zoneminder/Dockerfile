@@ -6,6 +6,7 @@ RUN apt-get update -y -qq && \
     add-apt-repository ppa:iconnor/zoneminder && \
     apt-get update -y -qq && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    nano \
     apache2 \
     build-essential \
     cmake \
@@ -37,6 +38,7 @@ RUN apt-get update -y -qq && \
     libmysqlclient-dev \
     libnet-sftp-foreign-perl \
     libnetpbm10-dev \
+    libnumber-bytes-human-perl \
     libpcre3 \
     libpcre3-dev \
     libpolkit-gobject-1-dev \
@@ -45,6 +47,11 @@ RUN apt-get update -y -qq && \
     libswscale-dev \
     libsys-cpu-perl \
     libsys-meminfo-perl \
+    libclass-std-fast-perl \
+    libdata-uuid-perl \
+    libdata-dump-perl \
+    libsoap-wsdl-perl \
+    libio-socket-multicast-perl \
     libsys-mmap-perl \
     libtheora-dev \
     libtool \
