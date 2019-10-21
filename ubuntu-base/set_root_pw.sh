@@ -10,7 +10,7 @@ _word=$( [ ${ROOT_PASS} ] && echo "preset" || echo "random" )
 echo "=> Setting a ${_word} password to the root user"
 echo "root:$PASS" | chpasswd
 
-adduser --disabled-password --gecos "" -s /bin/bash --quiet $USER
+adduser --disabled-password --gecos "" --shell /bin/bash --quiet $USER
 adduser $USER sudo
 DPASS=${USER_PASS:-$(pwgen -s 12 1)}
 

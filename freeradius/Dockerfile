@@ -7,7 +7,7 @@ EXPOSE 1812/udp 1813/udp
 
 RUN apt-get -y update && \
     apt-get -y dist-upgrade && \
-    apt-get install -y locales freeradius freeradius-utils freeradius-mysql net-tools
+    apt-get install -y locales freeradius freeradius-utils freeradius-mysql net-tools nano
 
 # generate locales
 RUN locale-gen en_US.UTF-8
