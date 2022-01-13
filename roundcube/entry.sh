@@ -44,4 +44,11 @@ export MPM_MAXCONNECTIONS=${MPM_CONNECTIONS:-0}
 
 php /bootstrap.php
 
+/var/www/html/bin/install-jsdeps.sh
+
+# special, compile elastic style less
+lessc -x /var/www/html/skins/elastic/styles/print.less > /var/www/html/skins/elastic/styles/print.css
+lessc -x /var/www/html/skins/elastic/styles/embed.less > /var/www/html/skins/elastic/styles/embed.css
+lessc -x /var/www/html/skins/elastic/styles/styles.less > /var/www/html/skins/elastic/styles/styles.css
+
 exec $@

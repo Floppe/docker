@@ -1,19 +1,19 @@
-FROM ubuntu:xenial
-
+FROM ubuntu:bionic
+#
 MAINTAINER Joachim Wickman <joachim@wickman.in>
-
+#
 EXPOSE 80 443
-
-ENV ROUNDCUBE_VERSION 1.2.5
+#
+ENV ROUNDCUBE_VERSION 1.4.10
 ENV DEBIAN_FRONTEND noninteractive
-
+#
 RUN apt-get update -qq && \
     apt-get dist-upgrade -qq -y && \
-    apt-get install -y nano \
+    apt-get install -y nano unzip zip \
 # install requirements
-    apache2 libapache2-mod-php7.0 \
-    php7.0 php7.0-cli php7.0-mysql php7.0-mcrypt php7.0-intl php7.0-mbstring php7.0-ldap \
-    ca-certificates php-pear && \
+    apache2 libapache2-mod-php7.2 \
+    php7.2 php7.2-cli php7.2-mysql php-dev libmcrypt-dev php-pear php7.2-intl php7.2-mbstring php7.2-ldap \
+    ca-certificates php-pear node-less && \
 # install Pear requirements
     pear install mail_mime mail_mimedecode net_smtp net_idna2-beta auth_sasl net_sieve crypt_gpg && \
 # cleanup
@@ -26,7 +26,7 @@ COPY 000-roundcube.conf /etc/apache2/sites-available/000-roundcube.conf
 
 RUN rm /etc/apache2/conf-enabled/* /etc/apache2/sites-enabled/* && \
     a2ensite 000-roundcube.conf && \
-    a2enmod deflate rewrite expires headers php7.0
+    a2enmod deflate rewrite expires headers php7.2
 
 # install code from git
 RUN apt-get update && \
