@@ -4,4 +4,4 @@ curl -sSL https://dl.google.com/android/repository/$ANDROID_SDK_FILE | bsdtar -x
 chmod +x $ANDROID_HOME/tools/bin/*
 sdkmanager --update
 yes | sdkmanager --licenses
-sdkmanager "build-tools;27.0.1" "platform-tools" "platforms;android-27" "ndk;23.0.7599858"
+sdkmanager "build-tools;30.0.3" "platform-tools" "platforms;android-31" "ndk;25.1.8937393"
