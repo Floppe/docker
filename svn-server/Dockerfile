@@ -1,4 +1,4 @@
-FROM alpine:3.10.3
+FROM alpine:3.20.3
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -21,4 +21,4 @@ HEALTHCHECK CMD netstat -ln | grep 3690 || exit 1
 VOLUME [ "/var/opt/svn" ]
 WORKDIR /var/opt/svn
 
-RUN apk add --no-cache subversion==1.12.2-r0 nano ssmtp gnupg
+RUN apk add --no-cache subversion==1.14.3-r2 wget nano ssmtp gnupg
