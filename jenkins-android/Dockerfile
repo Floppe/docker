@@ -9,7 +9,7 @@ ENV ANDROID_SDK_HOME=$ANDROID_HOME
 ENV PATH=$PATH:$ANDROID_HOME/tools/bin
 
 USER root
-RUN apt-get update -qq && apt-get install -y lib32stdc++6 lib32z1 nuget libunwind-dev && \
+RUN apt-get update -qq && apt-get install -y lib32stdc++6 lib32z1 nuget libunwind-dev iproute2 iputils-ping && \
 mkdir $ANDROID_HOME && chown jenkins $ANDROID_HOME
 
 # download SDK, install tools
