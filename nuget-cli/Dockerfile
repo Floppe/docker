@@ -30,7 +30,7 @@ COPY <<EOF /usr/bin/nuget
 mono /usr/bin/nuget.exe
 EOF
 
-RUN chmod 755 /usr/bin/nuget
+RUN chmod 755 /usr/bin/nuget /usr/bin/nuget.exe
 
 # # Little overhead.
 # RUN echo 'alias nuget="mono /usr/bin/nuget.exe"' >> /etc/bash.bashrc
