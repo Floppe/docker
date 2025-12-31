@@ -25,9 +25,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 ADD ${NUGET_EXE_DOWNLOAD_URL} /usr/bin/
 
-COPY <<EOF /usr/bin/nuget
+COPY <<'EOF' /usr/bin/nuget
 #!/usr/bin/env bash
-mono /usr/bin/nuget.exe
+mono /usr/bin/nuget.exe "$@"
 EOF
 
 RUN chmod 755 /usr/bin/nuget /usr/bin/nuget.exe
