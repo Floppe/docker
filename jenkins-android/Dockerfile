@@ -27,7 +27,7 @@ Components: stable
 Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
-RUN apt-get update -qq && apt-get install -y lib32stdc++6 lib32z1 libunwind-dev iproute2 iputils-ping libicu-dev docker.io && \
+RUN apt-get update -qq && apt-get install -y lib32stdc++6 lib32z1 libunwind-dev iproute2 iputils-ping libicu-dev lynx docker.io && \
 mkdir $ANDROID_HOME && chown jenkins $ANDROID_HOME
 
 # download SDK, install tools
